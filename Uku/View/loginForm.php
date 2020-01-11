@@ -13,6 +13,7 @@
           header('Location: Admin/adminForm.php');
         }else{
           $_SESSION['check-login']=true;
+          $_SESSION['id-account-login']=$result[0][0];
           header('Location: ../index.php');
         }
       }else {
