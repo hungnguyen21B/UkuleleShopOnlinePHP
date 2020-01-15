@@ -1,0 +1,70 @@
+.btn-logout {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.top-contact {
+    color: rgb(231, 231, 231);
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    font-size: 10px;
+}
+
+#footer .footer-top {
+    display: flex;
+    flex-direction: row;
+}
+
+#footer {
+    margin-top: 0px;
+    border-top: 50px solid #e6c8bc;
+}
+
+.d-flex button {
+    margin-left: 10px;
+}
+
+.btn-logout {
+    background: none;
+    border: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+#footer .footer-top .footer-top-item {
+    margin: 10px auto;
+    width: 200px;
+}
+
+#footer .footer-top #footer-top-easy {
+    width: 450px;
+}
+
+#footer .footer-top #footer-top-contact {
+    width: 230px;
+}
+
+#footer .footer-top #footer-top-contact a {
+    font-size: 15px;
+    color: #ef6b37;
+}
+
+#footer .footer-top span {
+    color: #ef6b37;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#footer .footer-top span:hover {
+    color: #d8a48f;
+    font-size: 22px;
+}

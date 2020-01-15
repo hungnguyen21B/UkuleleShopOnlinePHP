@@ -1,37 +1,3 @@
-<?php
-session_start();
-require '../../connection.php';
-$sql = "Select * from account;";
-$accounts=$db->query($sql)->fetch_all(); 
-if(isset($_POST['register'])){
-  $username= $_POST['username'];
-  $phonenumber= $_POST['phone-number'];
-  $password1= $_POST['password1'];
-  $password2= $_POST['password2'];
-  $sql= "select * from account where username ='".$username."';";
-  $checkUsername = $db->query($sql)->fetch_all();
-  // var_dump($checkUsername);
-  if (count($checkUsername)>0){
-    echo "<script>alert('The user-name is already.');</script>";
-  }else{
-    if ($password1!=$password2){
-      echo "<script>alert('The password is not confirm.');</script>";
-    }else {
-      if(strlen($phonenumber)<3){
-        echo "<script>alert('The phone-number is not true.');</script>";
-      }else {
-        $sql= "insert into account(username,password,phonenumber) values ('".$username."','".$password1."','".$phonenumber."');";
-        $db->query($sql);
-        echo "<script>alert('Let log-in now.');</script>";
-        header('');
-      }
-    }
-  }
-
-}else {
-
-}
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,11 +14,10 @@ if(isset($_POST['register'])){
       <div class="col-lg-10 col-xl-9 mx-auto">
         <div class="card card-signin flex-row my-5">
           <div class="card-img-left d-none d-md-flex">
-             <!-- Background image for card set in CSS! -->
           </div>
           <div class="card-body">
             <h5 class="card-title text-center">Register</h5>
-            <form class="form-signin" method="POST">
+            <form class="form-signin" method="POST" action="../../Controller/accountController.php">
               <div class="form-label-group">
                 <input type="text" id="inputUserame" class="form-control" name ="username"placeholder="User-name" required autofocus>
                 <label for="inputUserame">User-name</label>

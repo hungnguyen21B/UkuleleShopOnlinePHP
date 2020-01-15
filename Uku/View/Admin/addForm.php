@@ -1,28 +1,6 @@
-<?php session_start();
-    require '../../connection.php';
-    // $id=0;
-    // if(isset($_SESSION['id-edit'])){
-    //   $id=$_SESSION['id-edit'];
-    // }
+<?php 
+    require '../../Controller/productControllerAdminAdd.php';
     
-    $sql = "Select * from product ";
-    $product=$db->query($sql)->fetch_all();
-    // $_SESSION['old-price']= $product[0][3];
-    if(isset($_POST['add'])){
-     $name=$_POST['name'];
-     $quantity=$_POST['quantity'];
-     $type=$_POST['type'];
-     $price=$_POST['price'];
-     $oldPrice= $_SESSION['old-price'];
-     $description=$_POST['description'];
-     $image=$_POST['image'];
-     $sql="insert into product(name,price,quantity,type,description,image)values('".$name."',".$price.",".$quantity.
-     ",'".$type."','".$description."','Assets/Image/".$image."');";
-    //  echo $sql;
-     $db->query($sql);
-     echo "<script>alert('Successful...');</script>";
-     header("Location: adminForm.php");
-    }
 ?>
 <html lang="en">
 <head>
@@ -37,14 +15,14 @@
 <body>
 <div class="container-fluid">
   <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image " style="background-image: url('../../Assets/Image/logo.jpg');"></div>
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image " style="background-image: url('../../Assets/Image/cacloai.png');"></div>
     <!-- bg -->
     <div class="col-md-8 col-lg-6">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Add Product ID: <?php echo $product[count($product)-1][0]+1; ?>  </h3>
+              <h3 class="login-heading mb-4">Add Product ID: <?php echo $products[count($products)-1]->id+1; ?>  </h3>
               <form method="POST">
                 <div class="form-label-group">
                   <input type="text" id="inputEmail" value="" class="form-control"name="name" placeholder="Email address" required autofocus>
